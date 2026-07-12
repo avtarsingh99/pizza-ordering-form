@@ -1,0 +1,29 @@
+.app {
+  margin: 0 auto;
+  padding: 24px;
+  max-width: 900px;
+  border: 2px solid lavender;
+  border-radius: 32px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  /* background: #fcdb32; */
+  background: #141d38;
+  padding: 8px;
+  border-radius: 16px;
+  color: #fcdb32;
+  /* color: #141d38; */
+}
+
+h1{
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+
+.tagline {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #fcdb32;
+}
