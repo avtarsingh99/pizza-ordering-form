@@ -9,15 +9,13 @@
 }
 
 header {
-  /* background: #fcdb32; */
   background: #141d38;
   padding: 8px;
   border-radius: 16px;
   color: #fcdb32;
-  /* color: #141d38; */
 }
 
-h1{
+h1 {
   font-weight: bold;
   font-size: 2.4rem;
 }
@@ -26,4 +24,122 @@ h1{
   font-size: 1rem;
   letter-spacing: 2px;
   color: #fcdb32;
+}
+
+main {
+  padding: 12px;
+  background: white;
+  border-radius: 16px;
+  margin-top: 24px;
+  box-shadow: 0 1px 4px rgba(51, 0, 253, 0.2);
+}
+
+h2 {
+  border-bottom: 1px solid lightgray;
+  padding: 12px;
+}
+
+
+.customer-info, .pizza-customization {
+  background: #f3f7ff;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+h3 {
+  border-bottom: 1px solid #141d38;
+  padding-bottom: 12px;
+  margin-top: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, fieldset, select, textarea {
+  padding: 10px;
+  border: 2px solid lightgray;
+  border-radius: 16px;
+}
+
+.form-group label, .radio-group label, .radio-group legend {
+  font-size: 14px;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+}
+
+h4 {
+  border-bottom: 1px solid #141d38;
+  padding-bottom: 12px;
+  margin: 0;
+}
+
+.drinks-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-part p {
+ margin: 0;
+}
+
+.desc {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.right-part {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.right-part button {
+  height: 28px;
+  width: 28px;
+  border: none;
+  border-radius: 50%;
+  background-color: #141d38;
+  color: #fcdb32;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.summary {
+  background: #fcdb32;
+  color: #141d38;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-price {
+  font-weight: 600;
+  font-size: 16px;
 }
