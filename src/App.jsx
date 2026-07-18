@@ -112,50 +112,52 @@ function App() {
         <section className='customer-info'>
           <h3>Customer Information</h3>
           <div className='content'>
-            <div className='form-group'>
-              <label htmlFor='customer-name'>Name: </label>
-              <input
-                id='customer-name'
-                {...register('name',
-                  {
-                    required: { value: true, message: "Name is required" },
-                    minLength: { value: 3, message: "Name must be atleast of 3 characters" },
-                    maxLength: { value: 20, message: "Name can't be more than 20 characters" },
-                    pattern: { value: /^[A-Za-z ]+$/, message: "Characters 0 to 9 & special characters like !,@,#,$ aren't allowed" }
-                  })}
-                placeholder='Enter name here'
-                style={errors.name ? { border: '1px solid red' } : {}}
-              />
-              {errors.name && <p style={{ color: 'red', margin: 0, fontSize: '12px' }}>{errors.name.message}</p>}
-            </div>
-            <div className='form-group'>
-              <label htmlFor='customer-phone'>Phone: </label>
-              <input
-                id='customer-phone'
-                {...register('phone',
-                  {
-                    required: { value: true, message: "Phone number is required" },
-                    pattern: { value: /^[0-9]{10}$/, message: "Phone number must be exactly 10 digits" }
-                  })}
-                placeholder='e.g. 123 4567 890'
-                style={errors.phone ? { border: '1px solid red' } : {}}
-              />
-              {errors.phone && <p style={{ color: 'red', margin: 0, fontSize: '12px' }}>{errors.phone.message}</p>}
-            </div>
-            <div className='form-group'>
-              <label htmlFor='customer-email'>Email: </label>
-              <input
-                id='customer-email'
-                {...register('email',
-                  {
-                    required: { value: true, message: "Email address is required" },
-                    pattern: { value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: "Please enter a valid email address" }
-                  })}
-                placeholder='e.g. abc@example.com'
-                style={errors.email ? { border: '1px solid red' } : {}}
-              />
-              {errors.email && <p style={{ color: 'red', margin: 0, fontSize: '12px' }}>{errors.email.message}</p>}
-            </div>
+          <div className='row-group'>
+              <div className='form-group'>
+                <label htmlFor='customer-name'>Name: </label>
+                <input
+                  id='customer-name'
+                  {...register('name',
+                    {
+                      required: { value: true, message: "Name is required" },
+                      minLength: { value: 3, message: "Name must be atleast of 3 characters" },
+                      maxLength: { value: 20, message: "Name can't be more than 20 characters" },
+                      pattern: { value: /^[A-Za-z ]+$/, message: "Characters 0 to 9 & special characters like !,@,#,$ aren't allowed" }
+                    })}
+                  placeholder='Enter name here'
+                  style={errors.name ? { border: '1px solid red' } : {}}
+                />
+                {errors.name && <p style={{ color: 'red', margin: 0, fontSize: '12px' }}>{errors.name.message}</p>}
+              </div>
+              <div className='form-group'>
+                <label htmlFor='customer-phone'>Phone: </label>
+                <input
+                  id='customer-phone'
+                  {...register('phone',
+                    {
+                      required: { value: true, message: "Phone number is required" },
+                      pattern: { value: /^[0-9]{10}$/, message: "Phone number must be exactly 10 digits" }
+                    })}
+                  placeholder='e.g. 123 4567 890'
+                  style={errors.phone ? { border: '1px solid red' } : {}}
+                />
+                {errors.phone && <p style={{ color: 'red', margin: 0, fontSize: '12px' }}>{errors.phone.message}</p>}
+              </div>
+              <div className='form-group'>
+                <label htmlFor='customer-email'>Email: </label>
+                <input
+                  id='customer-email'
+                  {...register('email',
+                    {
+                      required: { value: true, message: "Email address is required" },
+                      pattern: { value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: "Please enter a valid email address" }
+                    })}
+                  placeholder='e.g. abc@example.com'
+                  style={errors.email ? { border: '1px solid red' } : {}}
+                />
+                {errors.email && <p style={{ color: 'red', margin: 0, fontSize: '12px' }}>{errors.email.message}</p>}
+              </div>
+              </div>
             <div className='checkbox-group'>
               <input
                 type='checkbox'
@@ -164,59 +166,67 @@ function App() {
               />
               <label htmlFor='user-check'>I agree to receive updates via WhatsApp</label>
             </div>
-            <div className='radio-group'>
-              <fieldset style={errors.gender ? { border: '1px solid red' } : {}}>
-                <legend>Gender: </legend>
-                <label>
-                  <input
-                    type='radio'
-                    value='male'
-                    {...register('gender',
-                      {
-                        required: { value: true, message: "Please select a gender" }
-                      })}
-                  />
-                  Male
-                </label>
-                <label>
-                  <input
-                    type='radio'
-                    value='female'
-                    {...register('gender',
-                      {
-                        required: { value: true, message: "Please select a gender" }
-                      })}
-                  />
-                  Female
-                </label>
-              </fieldset>
-              {errors.gender && <p style={{ color: 'red', margin: 0, fontSize: '12px' }}>{errors.gender.message}</p>}
-              <fieldset style={errors.orderType ? { border: '1px solid red' } : {}}>
-                <legend>Order Type:</legend>
-                <label>
-                  <input
-                    type='radio'
-                    value='homeDelivery'
-                    {...register('orderType',
-                      {
-                        required: { value: true, message: "Please select order type" }
-                      })}
-                  />
-                  Home Delivery
-                </label>
-                <label>
-                  <input
-                    type='radio'
-                    value='inStorePickup'
-                    {...register('orderType',
-                      {
-                        required: { value: true, message: "Please select order type" }
-                      })}
-                  />
-                  In-Store Pickup
-                </label>
-              </fieldset>
-              {errors.orderType && <p style={{ color: 'red', margin: 0, fontSize: '12px' }}>{errors.orderType.message}</p>}
+            <div className='row-group'>
+              <div className='form-group'>
+                <fieldset style={errors.gender ? { border: '1px solid red' } : {}}>
+                  <legend>Gender: </legend>
+                  <div className='circle-group'>
+                    <label>
+                      <input
+                        type='radio'
+                        value='male'
+                        {...register('gender',
+                          {
+                            required: { value: true, message: "Please select a gender" }
+                          })}
+                      />
+                      Male
+                    </label>
+                    <label>
+                      <input
+                        type='radio'
+                        value='female'
+                        {...register('gender',
+                          {
+                            required: { value: true, message: "Please select a gender" }
+                          })}
+                      />
+                      Female
+                    </label>
+                  </div>
+                </fieldset>
+                {errors.gender && <p style={{ color: 'red', margin: 0, fontSize: '12px' }}>{errors.gender.message}</p>}
+              </div>
+              <div className='form-group'>
+                <fieldset style={errors.orderType ? { border: '1px solid red' } : {}}>
+                  <legend>Order Type:</legend>
+                  <div className='circle-group'>
+                    <label>
+                      <input
+                        type='radio'
+                        value='homeDelivery'
+                        {...register('orderType',
+                          {
+                            required: { value: true, message: "Please select order type" }
+                          })}
+                      />
+                      Home Delivery
+                    </label>
+                    <label>
+                      <input
+                        type='radio'
+                        value='inStorePickup'
+                        {...register('orderType',
+                          {
+                            required: { value: true, message: "Please select order type" }
+                          })}
+                      />
+                      In-Store Pickup
+                    </label>
+                  </div>
+                </fieldset>
+                {errors.orderType && <p style={{ color: 'red', margin: 0, fontSize: '12px' }}>{errors.orderType.message}</p>}
+              </div>
             </div>
             {watch('orderType') === 'homeDelivery' && (
               <div className='form-group'>
@@ -239,29 +249,31 @@ function App() {
         <section className='pizza-customization'>
           <h3>Pizza Customization</h3>
           <div className='content'>
-            <div className='form-group'>
-              <label htmlFor='pizza-size'>Size: </label>
-              <select
-                id='pizza-size'
-                {...register('size')}
-              >
-                <option value='small'>Small - ₹ {pizzaSizePrices['small']}</option>
-                <option value='medium'>Medium - ₹ {pizzaSizePrices['medium']}</option>
-                <option value='large'>Large  -  ₹ {pizzaSizePrices['large']}</option>
-                <option value='xlarge'>Extra Large - ₹ {pizzaSizePrices['xlarge']}</option>
-              </select>
-            </div>
-            <div className='form-group'>
-              <label htmlFor='pizza-crust'>Crust: </label>
-              <select
-                id='pizza-crust'
-                {...register('crust')}
-              >
-                <option value='normal'>Normal</option>
-                <option value='thin'>Thin - ₹ {crustPrices['thin']} extra</option>
-                <option value='thick'>Thick - ₹ {crustPrices['thick']} extra</option>
-                <option value='stuffed'>Stuffed - ₹ {crustPrices['stuffed']} extra</option>
-              </select>
+            <div className='row-group'>
+              <div className='form-group'>
+                <label htmlFor='pizza-size'>Size: </label>
+                <select
+                  id='pizza-size'
+                  {...register('size')}
+                >
+                  <option value='small'>Small - ₹ {pizzaSizePrices['small']}</option>
+                  <option value='medium'>Medium - ₹ {pizzaSizePrices['medium']}</option>
+                  <option value='large'>Large  -  ₹ {pizzaSizePrices['large']}</option>
+                  <option value='xlarge'>Extra Large - ₹ {pizzaSizePrices['xlarge']}</option>
+                </select>
+              </div>
+              <div className='form-group'>
+                <label htmlFor='pizza-crust'>Crust: </label>
+                <select
+                  id='pizza-crust'
+                  {...register('crust')}
+                >
+                  <option value='normal'>Normal</option>
+                  <option value='thin'>Thin - ₹ {crustPrices['thin']} extra</option>
+                  <option value='thick'>Thick - ₹ {crustPrices['thick']} extra</option>
+                  <option value='stuffed'>Stuffed - ₹ {crustPrices['stuffed']} extra</option>
+                </select>
+              </div>
             </div>
             <div className='form-group'>
               <fieldset style={errors.toppings ? { border: '1px solid red' } : {}}>
