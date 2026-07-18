@@ -27,6 +27,9 @@ h1 {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: 12px;
   background: white;
   border-radius: 16px;
@@ -37,6 +40,7 @@ main {
 h2 {
   border-bottom: 1px solid lightgray;
   padding: 12px;
+  margin: 0;
 }
 
 
@@ -44,7 +48,9 @@ h2 {
   background: #f3f7ff;
   padding: 20px;
   border-radius: 16px;
+  margin-top: 12px;
   text-align: left;
+  height: 100%;
 }
 
 h3 {
@@ -77,14 +83,39 @@ input, fieldset, select, textarea {
   border-radius: 16px;
 }
 
-.form-group label, .radio-group label, .radio-group legend {
+.form-group label, .radio-group label, .radio-group legend, .form-group legend {
   font-size: 14px;
 }
 
 .checkbox-group {
   display: flex;
   gap: 8px;
+  align-items: center;
   font-size: 12px;
+}
+
+.toppings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+.topping {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(51, 0, 253, 0.2);
+}
+
+.topping input[type=checkbox] {
+  accent-color: #141d38;
+  height: 16px;
+  width: 16px;
 }
 
 h4 {
@@ -131,15 +162,146 @@ h4 {
   padding: 20px;
   border-radius: 16px;
   text-align: left;
+  margin-top: 12px;
 }
 
 .item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 12px 0 12px 0;
+  border-bottom: 0.5px solid #141d385b;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  font-size: 14px;
 }
 
 .item-price {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
+  min-width: fit-content;
+}
+
+.toppings-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.toppings-item p{
+  margin: 0;
+}
+
+.toppings-bracket {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #141d38;
+  margin-bottom: 12px;
+}
+
+.pay-now {
+  padding: 12px;
+  width: 320px;
+  background: #141d38;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  color: #fcdb32;
+  cursor: pointer;
+
+}
+
+.pay-now:hover {
+  background: green;
+}
+
+@media (max-width:768px) {
+  .app{
+    padding: 0;
+    border: none;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .tagline{
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .customer-info, .pizza-customization {
+    padding: 16px;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  input, fieldset, select, textarea {
+    border: 1px solid lightgray;
+  }
+
+  .form-group label, .radio-group label, .radio-group legend, .form-group legend{
+    font-size: 12px;
+  }
+
+  .checkbox-group {
+    gap: 4px;
+  }
+
+  .toppings-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  h4 {
+    font-size: 0.9rem;
+  }
+
+  .drinks-group p{
+    font-size: 13px;
+  }
+
+  .pay-now {
+    width: fit-content;
+    font-size: 14px;
+  }
+
+  .item {
+    gap: 12px;
+  }
+
+  .list-item {
+    font-size: 13px;
+  }
+
+  .item-price {
+    font-size: 13px;
+    width: 72px;
+    text-align: right;
+  }
+
+  .toppings-item {
+    font-size: 13px;
+  }
 }
